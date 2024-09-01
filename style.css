@@ -1,0 +1,267 @@
+/* font-family: "Inconsolata", monospace;
+font-family: "Roboto Mono", monospace; */
+
+/* NORMALIZACION: */
+
+*{
+    box-sizing: border-box; /*esto mantiene el ancho y el alto apesar del paddin y el border*/
+    color: white;
+    font-family: "Inconsolata", monospace;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;/*quita el subrayado de los enlaces*/
+}
+
+body{
+    background-color: black;/*To Do: borrar cuando tengamos el fondo final*/
+}
+
+header{
+    align-items: center;
+    background-color: transparent;
+    display: flex;/*elementos se ven en linea*/
+    justify-content: space-between;
+    padding: 15px 3%;
+    position: fixed;/*esto hace que el header quede fijo en la parte superior de la pagina*/
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;/*hace que el header se muestre por encima*/
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 800; /*grosor de las letras*/
+}
+
+.navlist{
+    display: flex;/*ordenar los items de la lista en forma horizontal es decir en lineal*/
+}
+
+.navlist a{
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 60px; /*separar los items de la lista*/
+    transition: all .5s ease;
+}
+
+.navlist a:hover{
+    border-bottom: 2px solid white;
+}
+
+#menu-icon{
+    display: none;
+}
+
+#menu-icon{
+    color: white;
+    cursor: pointer; /*cursor cambia a mano*/
+    font-size: 35px;
+    z-index: 101;/*para que este sobre el header*/
+    display: none;  
+}
+
+#menu-toggle{
+    display: none;
+}
+
+.menu-icon-action{
+    display: block;
+}
+
+
+.hero{
+    align-items: center; /*central verticalmente los items*/
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+    display: grid;/*dividir por columnas la seccion hero*/
+    gap: 2rem; /*espacio entre columnas*/
+    grid-template-columns: 1fr 1fr; /*numero de columnas*/
+    height: 100%;
+    min-height: 100vh;
+    position: relative; /*contenedor relativo*/
+    width: 100%;
+}
+
+section{
+    padding: 0 8%;
+}
+
+.hero-text h1{
+    font-family: "Roboto Mono", monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px; 
+}
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top:10px; 
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text p{
+    font-size: 80%;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+.hero-img img{
+    border-style: none;
+    border-radius: 60%;
+    height: auto;
+    margin: 5% 0 0 10%;
+    transition: all .7s linear ;
+    width: 300px;
+}
+
+.hero-img img:hover{
+    opacity: 0.8;
+    width: 335px;
+}
+
+.hero-text a{
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: white;
+    transform: translateX(8px);
+}
+
+.hero-text a.videos{
+    background-color:transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.videos i{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.icons{
+    padding: 0 3%;
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-50%);
+}
+
+.icons i{
+    display: block;
+    font-size: 24px;
+    margin: 26px 0;
+    transition: all .5s ease;
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scroll-down{
+    bottom: 6%;
+    position: absolute;
+    right: 3%;
+}
+
+.scroll-down i{
+    background-color: #21383d;
+    border-radius: 30px;
+    display: block;
+    font-size: 25px;
+    padding: 12px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+
+/*media queries para que la web sea responsive tablets y celulares*/
+
+@media (max-width:992px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .hero-text{
+        padding-top: 0;
+    }
+    .hero-img{
+        text-align: center;
+    }
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 10%;
+    }
+    .hero-text p{
+        font-size: 70%;
+    }
+    .icons{
+        display: none;
+    }
+    .scroll-down{
+        display:none;
+    }
+}
+
+@media (max-width:768px){
+    .menu-icon-action{
+        display:block;
+    }
+    #menu-icon{
+        display: block;
+    }
+    .hero-text{
+        text-align: center;
+        padding-top:100px;
+    }
+    .hero-img img{
+        margin: 0;
+    }
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #021719ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 1s ease;
+    }
+    .navlist a{
+        display: block;
+        margin: 7px 0;
+    }
+
+    .navlist.open{
+        right: 0;
+    }
+}
+
